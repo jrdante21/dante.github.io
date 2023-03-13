@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Manrope:wght@300&display=swap');
 :root {
-    --main-color: #041f44;
+    --main-color: #031731;
     --white-color: #d7d7d7;
-    --max-width: 1300px;
+    --max-width: 1350px;
+    --main-font: 'Manrope', Arial, sans-serif;
+    --second-font: 'Crimson Text', Times, serif;
 }
 
 @keyframes rotate {
@@ -15,42 +17,44 @@
 }
 
 body, html {
-    font-family: 'Manrope', Arial, sans-serif;
+    font-family: var(--main-font);
     margin: 0px;
     padding: 0px;
     font-size: 18px;
     letter-spacing: 1px;
     background-color: var(--main-color);
+    color: var(--white-color);
+    scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4 {
     font-weight: 700;
-    font-family: 'Crimson Text', Times, serif;
+    font-family: var(--second-font);
     margin: 0px 0px .2em;
 }
 h1 {
     font-size: 3.5em;
+    line-height: 1em;
 }
-
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
 p {
-    margin: 0px 0px 1em;
+    margin: 0px 0px 1.5em;
+    font-size: 16px;
 }
-
 div {
     box-sizing: border-box;
     position: relative;
 }
-
 img {
     display: block;
     margin: 0px;
 }
-
 a {
+    display: inline-block;
     text-decoration: none;
     transition: all ease-in .3s;
 }
-
 .text-white { color: var(--white-color); }
 .text-center { text-align: center; }
 
@@ -59,21 +63,54 @@ a {
     align-content: center;
     justify-items: center;
 }
-.content {
+.container {
     max-width: var(--max-width);
     width: 80%;
     margin: auto;
 }
+.padded {
+    padding: 120px 0px;
+}
+.flex {
+    display: flex;
+    align-items: center;
+    column-gap: 5%;
+}
+.flex > div { flex: 1 1 0%; }
+.flex.initial > div { flex: initial; }
+.flex.equal-height {
+    align-items: stretch;
+}
+
+
+.button {
+    font-family: var(--second-font);
+    color: var(--white-color);
+    border: 1px solid var(--white-color);
+    border-radius: 999px;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    backdrop-filter: blur(14px);
+}
+.button.second {
+    background-color: rgba(255,255,255,0.2);
+}
+.button:hover {
+    background-color: var(--white-color);
+    color: var(--main-color);
+}
 
 
 .hero-container {
-    background-color: var(--main-color);
+    background-color: #021022;
+    background-image: url(/images/grid-pattern.png);
+    background-size: 350px;
     overflow: hidden;
     min-height: 100vh;
     color: var(--white-color);
     padding-top: 40px;
 }
-.hero-container > .content {
+.hero-container > .container {
     height: 100%;
     display: flex;
     align-items: center;
@@ -81,7 +118,7 @@ a {
     column-gap: 30px;
     z-index: 5;
 }
-.hero-container > .content > div { flex: 1 1 0%; }
+.hero-container > .container > div { flex: 1 1 0%; }
 .hero-container .hero-image img { display: none; }
 .hero-container .hero-image {
     background-image: url(/images/me.png);
@@ -90,18 +127,28 @@ a {
     background-position: top;
     height: calc(100vh - 40px);
 }
+.hero-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    z-index: 1;
+    background: linear-gradient(180deg, #021022 0%, rgba(0,0,0,0) 100%);
+}
 .hero-container:after {
     --size: 700px;
     content: '';
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     bottom: -10%;
     right: 10%;
     width: var(--size);
     height: var(--size);
     filter: blur(calc(var(--size) / 5));
     background-image: linear-gradient(rgb(84 242 247 / 45%), rgb(255 255 255 / 25%));
-    animation: rotate 10s alternate infinite;
+    animation: rotate 30s alternate infinite;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 
@@ -129,8 +176,36 @@ a {
 }
 
 
+.card {
+    border: 1px solid var(--white-color);
+    padding: 30px;
+    border-radius: 40px;
+}
+.card > .icon {
+    font-size: 3em;
+    transform: scale(1.5) translateY(-0.5em);
+}
+.card > .title {
+    margin-bottom: .5em;
+}
+.card > .description {
+    margin-bottom: 0px;
+}
+
+
 @media (max-width: 768px) {
-    .hero-container > .content {
+    .padded {
+        padding: 60px 0px;
+    }
+    .flex {
+        flex-direction: column;
+        row-gap: 60px;
+    }
+    .flex.reverse-on-mobile {
+        flex-direction: column-reverse;
+    }
+
+    .hero-container > .container {
         flex-direction: column;
         text-align: center;
     }
