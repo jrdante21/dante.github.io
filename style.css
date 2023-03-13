@@ -1,0 +1,33 @@
+:root {
+    --main-color: #041f44;
+}
+
+body, html {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0px 0px .5em;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.text-white { color: #fff; }
+
+.hero-container {
+    background-color: var(--main-color);
+    height: 100vh;
+    min-height: 700px;
+    padding: 30px 20px;
+    display: grid;
+    align-content: center;
+    color: #fff;
+    text-align: center;
+}
