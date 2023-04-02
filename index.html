@@ -1,119 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <title>Dante Dueñas Portfolio</title>
-</head>
-<body>
-    <div class="hero-container">
-        <div class="container">
-            <div>
-                <ul class="social-icons"></ul>
-                <h1>
-                    <span style="font-size: .5em">Hello, I'm</span><br/>
-                    Dante Dueñas
-                </h1>
-                <p style="margin-bottom: 1.8em;">
-                    I specialize in designing and building a user-friendly and functional websites.
-                </p>
-                <a href="#scrollDown" class="button">About Me</a>
-                <!-- <div class="flex initial">
-                    <div>
-                        <a href="#scrollDown" class="button">About Me</a>
-                    </div>
-                    <div>
-                        <a href="#scrollDown" class="button second">My Resume <i class="fa fa-download"></i></a>
-                    </div>
-                </div> -->
-            </div>
-            <div class="hero-image">
-                <img src="images/me.png" width="80%" alt="Dante Dueñas">
-            </div>
-        </div>
-    </div>
-
-    <div id="scrollDown"></div>
-
-    <div class="padded-y" style="padding-bottom: 0px;">
-        <div class="hero-bottom-overlap">
-            <div class="container bg-glass flex">
-                <div>
-                    <div class="blurb">
-                        <div class="blurb-icon">
-                            <i class="fa fa-certificate"></i>
-                        </div>
-                        <div class="blurb-content">
-                            <h3><span id="yearXP">3</span> Years</h3>
-                            <p>Experience</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="blurb">
-                        <div class="blurb-icon">
-                            <i class="fa fa-database"></i>
-                        </div>
-                        <div class="blurb-content">
-                            <h3>Full-stack</h3>
-                            <p>Developer</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div class="blurb">
-                        <div class="blurb-icon">
-                            <i class="fa fa-code"></i>
-                        </div>
-                        <div class="blurb-content">
-                            <h3>UI / UX</h3>
-                            <p>Designer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="padded-y">
-        <div class="container">
-            <div class="text-center">
-                <h2>About Me</h2>
-                <p>
-                    I have experience in using various content management systems (CMS) and programming languages such as HTML, CSS, JavaScript, and PHP.
-                    I strive to stay up-to-date with the latest web technologies and trends to provide the best possible solutions for my clients.
-                </p>
-                <ul class="social-icons" style="justify-content: center;"></ul>
-            </div>
-        </div>
-    </div>
-    <script>
-        countYearXP('#yearXP');
-        socials('.social-icons');
-
-        function countYearXP(el) {
-            let date = new Date();
-            let year = date.getFullYear();
-            $(el).text(year - 2018);
-        }
-
-        function socials(el) {
-            let socials = [
-                {link: 'https://www.facebook.com/jrDante21', icon: 'fa fa-facebook', openNew: true },
-                {link: 'https://www.linkedin.com/in/jrdante21/', icon: 'fa fa-linkedin', openNew: true },
-                {link: 'mailto:danteduenas10@gmail.com', icon: 'fa fa-envelope' },
-            ]
-
-            socials.forEach(social => {
-                let target = social?.openNew ? 'target="_blank"' : '';
-                $(el).append(`<li><a href="${social.link}" ${target}><i class="${social.icon}"></i></a></li>`);
-            });
-        }
-    </script>
-</body>
+    <script type="module" crossorigin src="/assets/index-982b3d74.js"></script>
+    <link rel="stylesheet" href="/assets/index-3f8ce987.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    
+  </body>
 </html>
